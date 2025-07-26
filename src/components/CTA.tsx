@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 
@@ -35,11 +36,15 @@ export function CTA() {
             Join thousands of users optimizing trades with AI. Experience the future of automated trading.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="glow-effect">
-              Get Started <ChevronRight className="ml-1 h-5 w-5" />
+            <Button size="lg" className="glow-effect" asChild>
+              <Link href="/auth">
+                Get Started <ChevronRight className="ml-1 h-5 w-5" />
+              </Link>
             </Button>
-            <Button variant="outline" size="lg">
-              Learn More
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/pricing">
+                Learn More
+              </Link>
             </Button>
           </div>
           <p className="mt-8 text-sm text-muted-foreground">
